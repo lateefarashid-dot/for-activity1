@@ -10,7 +10,8 @@ user_input = st.text_input("")
 col1, col2 = st.columns([4,1])
 with col2:
    if st.button("مسح"):
-       st.session_state.clear()
+       st.session_state.user_input=""
+       st.session_state.input_box=""
        st.rerun()
 # عرض النتائج
 if user_input:
@@ -56,6 +57,7 @@ if user_input:
                unsafe_allow_html=True
            )
            time.sleep(0.2)
+
 
 
 
