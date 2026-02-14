@@ -1,27 +1,5 @@
 import streamlit as st
 import time
-import streamlit as st
-st.title("النشاط التفاعلي ✨")
-# نخزن القيمة في session_state
-if "user_input" not in st.session_state:
-   st.session_state.user_input = ""
-# حقل الإدخال
-user_input = st.text_input(
-   "اكتبي إجابتك هنا:",
-   value=st.session_state.user_input,
-   key="input_box"
-)
-# زر التحقق
-if st.button("تحقق"):
-   if user_input.strip() != "":
-       st.success("إجابة ممتازة 👏")
-   else:
-       st.warning("اكتبي إجابة أولاً")
-# زر المسح
-if st.button("مسح"):
-   st.session_state.user_input = ""
-   st.session_state.input_box = ""
-   st.rerun()
 st.set_page_config(page_title="تجربة الجملة التكرارية for", layout="centered")
 # عنوان
 st.markdown("<h1 style='text-align:center;'>✨ for تجربة الجملة التكرارية </h1>", unsafe_allow_html=True)
@@ -78,6 +56,7 @@ if user_input:
                unsafe_allow_html=True
            )
            time.sleep(0.2)
+
 
 
 
