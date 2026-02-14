@@ -57,5 +57,5 @@ if user_input:
            )
            time.sleep(0.2)
 
-root.mainloop()
+
 
