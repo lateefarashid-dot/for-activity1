@@ -2,7 +2,7 @@ import streamlit as st
 import time
 st.set_page_config(page_title="تجربة الجملة التكرارية for", layout="centered")
 # عنوان
-st.markdown("<h1 style='text-align:center;'>✨ تجربة الجملة التكرارية for</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;'>✨ for تجربة الجملة التكرارية </h1>", unsafe_allow_html=True)
 st.write("أدخل النص أو القائمة (القائمة مفصولة بفواصل):")
 # إدخال المستخدم
 user_input = st.text_input("")
@@ -56,6 +56,7 @@ if user_input:
                unsafe_allow_html=True
            )
            time.sleep(0.2)
+
 
 
 
