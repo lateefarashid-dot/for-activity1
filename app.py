@@ -1,5 +1,49 @@
-import tkinter as tk
-from tkinter import messagebox
+import streamlit as st
+import time
+st.set_page_config(page_title="الفرق بين النص والقائمة", layout="centered")
+st.title("✨ تجربة الجملة التكرارية for")
+st.write("اكتبي نص أو عناصر مفصولة بفواصل ثم اضغطي Enter")
+user_input = st.text_input("أدخلي النص أو القائمة هنا:")
+if user_input:
+   # إذا فيه فاصلة → قائمة
+   if "," in user_input:
+       items = [item.strip() for item in user_input.split(",") if item.strip()]
+       for item in items:
+           st.markdown(
+               f"""
+<div style="
+                   background-color:#FFC0CB;
+                   padding:10px;
+                   margin:8px;
+                   border-radius:8px;
+                   text-align:center;
+                   font-weight:bold;
+                   font-size:18px;">
+                   ⭐ {item}
+</div>
+               """,
+               unsafe_allow_html=True
+           )
+           time.sleep(0.3)
+   # إذا لا → نص
+   else:
+       for char in user_input:
+           st.markdown(
+               f"""
+<div style="
+                   background-color:#ADD8E6;
+                   padding:10px;
+                   margin:8px;
+                   border-radius:8px;
+                   text-align:center;
+                   font-weight:bold;
+                   font-size:18px;">
+                   🌟 {char}
+</div>
+               """,
+               unsafe_allow_html=True
+           )
+           time.sleep(0.3)
 import random
 # دالة توليد لون فاتح
 def random_light_color(base_color):
@@ -73,4 +117,5 @@ clear_btn.grid(row=0, column=1, padx=5)
 # مساحة العرض
 output_canvas = tk.Canvas(root, width=600, height=350, bg="#FFFACD")
 output_canvas.pack(pady=10)
+
 root.mainloop()
